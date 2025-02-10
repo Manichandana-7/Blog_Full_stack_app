@@ -49,7 +49,6 @@ const Bloglist = ({ blogs, showAll = false }) => {
 
   return (
     <div className="relative w-full max-w-4xl">
-      {/* Left Navigation Button */}
       {recentBlogs.length > 1 && (
         <button
           className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-sky-700 text-white p-4 rounded-full shadow-lg z-10 hover:bg-sky-600"
@@ -59,25 +58,21 @@ const Bloglist = ({ blogs, showAll = false }) => {
         </button>
       )}
 
-      {/* Blog Slideshow */}
       <Slider ref={sliderRef} {...settings}>
         {recentBlogs.map((blog) => (
           <div key={blog._id} className="p-5 transition-transform duration-300 transform hover:scale-105">
             <div className="relative bg-white shadow-2xl rounded-md p-6 flex items-center">
-              {/* Image on the Left */}
+
               <div className="w-1/2 h-90 overflow-hidden rounded-md flex-shrink-0">
                 <img src={blog.imgurl} alt={blog.title} className="w-full h-full object-cover" />
               </div>
 
-              {/* Content on the Right */}
               <div className="w-1/2 pl-6">
                 <h2 className="text-2xl font-bold text-sky-800 mt-4">{blog.title}</h2>
                 <p className="text-gray-600 mt-2 line-clamp-3">
                   {blog.desc.length > 200 ? blog.desc.substring(0, 200) + "..." : blog.desc}
                 </p>
                 <p className="text-sm text-gray-400 mt-2 absolute bottom-4 p-2">{new Date(blog.createdDate).toDateString()}</p>
-
-                {/* Read More Link */}
                 <Link to={`/blogs/${blog._id}`} className="absolute bottom-4 right-4 px-4 py-2 underline text-sky-800 rounded-md">
                   Read More
                 </Link>
@@ -86,8 +81,6 @@ const Bloglist = ({ blogs, showAll = false }) => {
           </div>
         ))}
       </Slider>
-
-      {/* Right Navigation Button */}
       {recentBlogs.length > 1 && (
         <button
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-sky-700 text-white p-4 rounded-full shadow-lg z-10 hover:bg-sky-600"

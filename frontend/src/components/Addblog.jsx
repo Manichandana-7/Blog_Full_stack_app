@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 const AddBlog = () => {
   const [formData, setFormData] = useState({
@@ -9,10 +9,10 @@ const AddBlog = () => {
     desc: "",
     imgurl: "",
     author: "",
-    createdDate: "",
+    createdDate: Date.now(),
   });
 
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     setFormData({
@@ -26,7 +26,6 @@ const AddBlog = () => {
     try {
       const response = await axios.post("http://localhost:5000/blogs", formData);
       alert("Blog added successfully!");
-      // Redirect to the list of blogs after the blog is added successfully
       navigate("/"); 
     } catch (error) {
       alert("Error adding blog:", error);
@@ -35,10 +34,7 @@ const AddBlog = () => {
 
   return (
     <div className="flex justify-center items-center m-10">
-      {/* Container for animation and form */}
       <div className="flex items-center space-x-10 border border-gray-300 rounded-lg shadow-xl p-10">
-        
-        {/* Lottie Animation */}
         <div className="w-2/5 flex justify-center">
           <DotLottieReact
             src="https://lottie.host/e7f2ed9e-83d5-4677-a327-5a7d3aef4cd6/Uj5k0wRZdm.lottie"
@@ -47,7 +43,6 @@ const AddBlog = () => {
             style={{ width: "100%", maxWidth: "250px" }}
           />
         </div>
-        {/* Form Container */}
         <div className="w-3/5 flex flex-col justify-center p-5">
           <h1 className="font-bold text-xl text-center text-sky-800 mb-5">Add a Blog</h1>
 
@@ -104,7 +99,7 @@ const AddBlog = () => {
               className="border-1 rounded-md w-full p-1 bg-gray-50"
             />
 
-            <label htmlFor="createdDate" className="text-md block font-bold mb-2 text-sky-800">
+            {/* <label htmlFor="createdDate" className="text-md block font-bold mb-2 text-sky-800">
               Created Date:
             </label>
             <input
@@ -114,7 +109,7 @@ const AddBlog = () => {
               value={formData.createdDate}
               onChange={handleChange}
               className="border-1 rounded-md w-full p-1 bg-gray-50"
-            />
+            /> */}
 
             <button type="submit" className="px-5 py-2 bg-sky-700 text-white rounded-md hover:bg-sky-600">
               Add blog

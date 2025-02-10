@@ -47,7 +47,7 @@ const EditBlog = () => {
 
       if (!res.ok) throw new Error("Failed to update blog");
 
-      navigate(`/blogs/${id}`); // Redirect to updated blog page
+      navigate(`/blogs/${id}`);
     } catch (error) {
       console.error("Error:", error);
     }

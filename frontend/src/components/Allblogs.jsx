@@ -9,7 +9,7 @@ const Allblogs = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/blogs"); // Replace with your backend URL
+        const response = await axios.get("http://localhost:5000/blogs"); 
         setBlogs(response.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);
