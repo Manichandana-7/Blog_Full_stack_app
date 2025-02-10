@@ -67,7 +67,7 @@ const deleteBlog = async (req, res) => {
 // Like count
 const likeBlog = async (req, res) => {
   try {
-    const blog = await BlogStore.findById(req.params.id); // Use BlogStore here
+    const blog = await BlogStore.findById(req.params.id); 
     if (!blog) return res.status(404).json({ error: 'Blog not found!' });
 
     blog.likeCount += 1;
@@ -81,7 +81,7 @@ const likeBlog = async (req, res) => {
 // View count
 const viewBlog = async (req, res) => {
   try {
-    const blog = await BlogStore.findById(req.params.id); // Use BlogStore here
+    const blog = await BlogStore.findById(req.params.id); 
     if (!blog) return res.status(404).json({ error: 'Blog not found!' });
 
     blog.viewCount += 1;

@@ -20,7 +20,7 @@ const blogSchema=new mongoose.Schema({
         type:Date,
         default:Date.now
     },
-    likeCount: { type: Number, default: 0 },  // Initialize like count
+    likeCount: { type: Number, default: 0 },  
   viewCount: { type: Number, default: 0 },
 })
 module.exports=mongoose.model('BlogStore',blogSchema);

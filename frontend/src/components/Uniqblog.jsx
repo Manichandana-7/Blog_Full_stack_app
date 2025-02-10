@@ -50,7 +50,7 @@ const UniqBlog = () => {
         const res = await fetch(`http://localhost:5000/blogs/${id}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Failed to delete blog");
 
-        navigate("/"); // Redirect to homepage or blogs list
+        navigate("/"); 
       } catch (error) {
         setError("Error deleting blog: " + error.message);
       }
